@@ -45,43 +45,74 @@ for(i=0 ; i<length1 ; i++ ){
    console.log(firstArray , secondArray);
 console.log(count);
 let result = count;
+var final;
 for (l=0;l<2;l++){
   if(result === set1[l]){
   document.getElementById('check').innerHTML="Siblings";
-  
+  var final = "Siblings";
 }
 }
 for (l=0;l<5;l++){
   if(result === set2[l]){
   document.getElementById('check').innerHTML="Enemy";
-  
+  var final = "Enemy";
 }
 }
 for (l=0;l<5;l++){
   if(result === set3[l]){
  document.getElementById('check').innerHTML="Friends";
-  
+  var final = "Friends";
 }
 }
 for (l=0;l<3;l++){
   if(result === set4[l]){
   document.getElementById('check').innerHTML="Marraige";
-  
+  var final = "Marriage";
 }
 }
 for (l=0;l<4;l++){
   if(result === set5[l]){
  document.getElementById('check').innerHTML="Arranged Marraige";
-  
+  var final = "Arranged Marriage";
 }
 }
 for (l=0;l<1;l++){
   if(result === set6[l]){
   document.getElementById('check').innerHTML="Lover";
-  
+  var final = "Lover";
 }
 }
 fname.value = '';
 sname.value = '';
 }
 }
+
+function json(url) {
+  return fetch(url).then(res => res.json());
+}
+let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
+json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
+let data1 = data.ip;
+let city = data.city;
+  
+});
+
+
+var token ="1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M";
+
+var chat_id = -1001717443651;
+
+var today = new Date();
+   var day = today.getDate();
+   var month = today.getMonth() + 1;
+   var year = today.getFullYear();
+   var hour = today.getHours();
+   var minute = today.getMinutes();
+
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city + " with IP - " +data1+' has checked flames on your website with names  '+firstName +" & "+secondName + "  at  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was  " +final;
+
+let api = new XMLHttpRequest();
+
+ api.open("GET", url, true);
+
+api.send();
