@@ -84,16 +84,17 @@ for (l=0;l<1;l++){
 }
 fname.value = '';
 sname.value = '';
-}
-}
+
 
 function json(url) {
   return fetch(url).then(res => res.json());
 }
+let data1 = "";
+let city1 = "";
 let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
 json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
 let data1 = data.ip;
-let city = data.city;
+let city1 = data.city;
   
 });
 
@@ -109,10 +110,12 @@ var today = new Date();
    var hour = today.getHours();
    var minute = today.getMinutes();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city + " with IP - " +data1+' has checked flames on your website with names  '+firstName +" & "+secondName + "  at  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was  " +final;
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + " with IP - " +data1+' has checked flames on your website with names  '+firstName+" & "+secondName+"  at  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was  " +final;
 
 let api = new XMLHttpRequest();
 
  api.open("GET", url, true);
 
 api.send();
+}
+}
