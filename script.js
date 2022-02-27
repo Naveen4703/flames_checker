@@ -109,7 +109,7 @@ var today = new Date();
    var hour = today.getHours();
    var minute = today.getMinutes();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from '+city1+" with IP - "+data1+' has checked flames on your website with names '+firstName+' '+secondName+' at '+ day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was " +final;
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone with IP - '+ip1+' has checked flames on your website with names '+firstName+' '+secondName+' at '+ day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was " +final;
 
 let api = new XMLHttpRequest();
 
