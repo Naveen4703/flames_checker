@@ -89,32 +89,32 @@ sname.value = '';
 function json(url) {
   return fetch(url).then(res => res.json());
 }
-var data1 = "";
-var city1 = "";
+let data1= "";
+let city1 = "";
 let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
-json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {data1 = data.ip;
-city1 = data.city;
-  
-});
+json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
+  let data1 = data.ip;
+  let city1 = data.city;
+  console.log(data1);
+  console.log(data.threat.is_proxy);
 
 
 var token ="1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M";
 
 var chat_id = -1001717443651;
 
-var today = new Date();
-   var day = today.getDate();
-   var month = today.getMonth() + 1;
-   var year = today.getFullYear();
-   var hour = today.getHours();
-   var minute = today.getMinutes();
+var time = new Date();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone with IP - has checked flames on your website with names '+firstName+' '+secondName+' at '+ day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was " +final;
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + " with IP - " + data1 +' has checked flames on your website with names  '+firstName +"   "+secondName + "  at  "+time + " and their result was  " +final;
 
 let api = new XMLHttpRequest();
 
  api.open("GET", url, true);
 
-api.send();
+ api.send();
+console.log(url); 
+
+  });
+
 }
 }
