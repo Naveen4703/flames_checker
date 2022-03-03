@@ -43,6 +43,10 @@ for(i=0 ; i<length1 ; i++ ){
   }
 let result = count;
 var final;
+if (result === 0 ){
+document.getElementById('check').innerHTML="Nenu Mari antha yedhavalaa kanapaduthunana?😑😒 Same names check chesav";
+var final = "Pilla huhu gadu same names check chesadu😑";
+}
 for (l=0;l<2;l++){
   if(result === set1[l]){
   document.getElementById('check').innerHTML="Siblings";
